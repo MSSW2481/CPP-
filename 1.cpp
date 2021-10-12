@@ -48,7 +48,24 @@ void Graph::DepthFirstSearch(int v)
   
     // Call the recursive helper function to print DFS traversal
     DFSUtil(v, visited.get());
+}
+Graph::Graph(int V, bool directed) : (new std::list<int>[V])
+{
+    _V = V;
+    _directed = directed;       
+} 
+void Graph::DepthFirstSearch(int v)
+{
+    // Mark all the vertices as not visited
+    std::unique_ptr<bool[]> visited(new bool[_V]);
+     
+    for (int i = 0; i < _V; i++)
+        visited[i] = false;
+  
+    // Call the recursive helper function to print DFS traversal
+    DFSUtil(v, visited.get());
 }  
+
    
 
   
