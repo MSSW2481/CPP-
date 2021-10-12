@@ -15,6 +15,23 @@ public:
     void AddEdge(int v, int w); 
     void DepthFirstSearch(int s); 
 };
+#include <iostream>
+#include <list>
+#include <memory>
+   
+class Graph
+{
+private:
+    int _V;    
+    bool _directed;
+    std:: unique_ptr< std::list<int> > adj;  
+    void DFSUtil(int v, bool visited[]);
+      
+public:
+    Graph(int V, bool directed);
+    void AddEdge(int v, int w); 
+    void DepthFirstSearch(int s); 
+};
    
 Graph::Graph(int V, bool directed) : (new std::list<int>[V])
 {
