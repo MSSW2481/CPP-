@@ -114,4 +114,16 @@ int main()
   
     return 0;
 }
-
+class Graph
+{
+private:
+    int _V;    
+    bool _directed;
+    std:: unique_ptr< std::list<int> > adj;  
+    void DFSUtil(int v, bool visited[]);
+      
+public:
+    Graph(int V, bool directed);
+    void AddEdge(int v, int w); 
+    void DepthFirstSearch(int s); 
+};
